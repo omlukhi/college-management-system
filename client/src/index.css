@@ -1,0 +1,176 @@
+/* College Management System Premium Design System */
+/* Color Palette: White + Blue + Dark Gray */
+
+:root {
+  /* HSL Tailored Colors */
+  --primary-color: #1e3a8a;       /* Dark Royal Blue */
+  --primary-light: #3b82f6;       /* Vibrant Sky Blue */
+  --accent-color: #0f172a;        /* Deep Slate Gray */
+  --bg-light: #f8fafc;            /* Clean light grey-white */
+  --card-light: #ffffff;
+  --text-light: #1e293b;
+  --border-light: #e2e8f0;
+  
+  /* Shared variables */
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+}
+
+/* Dark Mode Overrides */
+[data-theme="dark"] {
+  --primary-color: #3b82f6;
+  --primary-light: #60a5fa;
+  --accent-color: #f8fafc;
+  --bg-light: #090d16;
+  --card-light: #111827;
+  --text-light: #f3f4f6;
+  --border-light: #1f2937;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+/* Global Card Styling */
+.cms-card {
+  background: var(--card-light);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.cms-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+
+/* Hero Glassmorphism */
+.hero-glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+}
+
+/* Animation Utilities */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Navbar Styling */
+.cms-navbar {
+  background-color: var(--card-light);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: var(--shadow);
+}
+
+.nav-link-custom {
+  color: var(--text-light);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+.nav-link-custom:hover {
+  color: var(--primary-light);
+  background-color: rgba(59, 130, 246, 0.08);
+}
+
+/* Circular Progress / Loading Spinner */
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.cms-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--border-light);
+  border-bottom-color: var(--primary-color);
+  border-radius: 50%;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Dashboard Sidebar Layout */
+.sidebar {
+  min-height: 100vh;
+  width: 260px;
+  background-color: #0f172a;
+  color: #f8fafc;
+  transition: var(--transition);
+}
+
+.sidebar .nav-link {
+  color: #94a3b8;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  margin: 0.2rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: var(--transition);
+}
+
+.sidebar .nav-link:hover, .sidebar .nav-link.active {
+  color: #ffffff;
+  background-color: #1e293b;
+}
+
+/* Responsive Table */
+.cms-table-container {
+  background: var(--card-light);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.cms-table {
+  width: 100%;
+  margin-bottom: 0;
+  color: var(--text-light);
+}
+
+.cms-table th {
+  background-color: rgba(59, 130, 246, 0.05);
+  border-bottom: 2px solid var(--border-light);
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.cms-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-light);
+  vertical-align: middle;
+}
